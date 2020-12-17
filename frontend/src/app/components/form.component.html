@@ -1,0 +1,47 @@
+<h1>Angular Form (POST)</h1>
+
+<div class="row mt-3 mb-3">
+    <div class="col d-flex justify-content-end align-itmes-center">
+        <button type="button" class="btn btn-warning btn-sm" [routerLink]="['/']">
+            HOME
+        </button>
+    </div>
+</div>
+
+<form [formGroup]="form" (ngSubmit)="process()">
+    <table>
+        <tr>
+            <td>Title</td>
+            <td>
+                <input type="text" formControlName="title">
+            </td>
+        </tr>
+        <tr>
+            <td>ISBN</td>
+            <td>
+                <input type="text" formControlName="isbn">
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <button type="submit" class="ml-2 btn btn-dark">Submit</button>
+            </td>
+        </tr>
+    </table>
+</form>
+<hr>
+
+<div class="container">
+    <form [formGroup]="form" (ngSubmit)="upload()">
+      <label>Image </label>
+      <input type="file" accept="image/*" formControlName="image-file" #imageFile>
+      <hr>
+      <button type="submit" class="ml-2 btn btn-primary">Upload</button>
+    </form>
+  </div>
+  <hr>
+  <div>
+    <img [src]="uploadImg" width="200vw" height="200vw"/>
+  </div>
+ 
